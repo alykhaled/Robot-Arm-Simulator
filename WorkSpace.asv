@@ -10,8 +10,8 @@ q2_min = 0;
 q2_max = 120;
 % q3_min = -90;
 % q3_max = 150;
-t1=linspace(q1_min, q1_max, 200)*pi/180;
-t2=linspace(q2_min, q2_max, 200)*pi/180;
+t1=linspace(q1_min, q1_max, 100)*pi/180;
+t2=linspace(q2_min, q2_max, 100)*pi/180;
 % t3=linspace(q3_min, q3_max, 200)*pi/180;
 
 [q1,q2]=ndgrid(t1,t2); 
@@ -24,11 +24,11 @@ y = l1 * sin(t1) + l2 * sin(t1 + t2);
 plot(xM,yM,'b-')
 area = 0;
 d = xM(4);
-for i = 1:199
-    for j = 1:199
-        area = area + (xM(i,j)+xM(i,j+1))*(yM(i,j+1)-yM(i,j));
+for i = 1:99
+    for j = 1:99
+        area = area + (xM(i,j)+xM(i+1,j+1))*(yM(i+1)-yM(i));
     end
 end
-area = area/180
+area = area/2
 
 grid on
