@@ -6,13 +6,17 @@ wx = x - l3*cosd(phi);
 wy = y - l3*sind(phi);
 
 theta2 = acosd((wx^2 + wy^2 - l1^2 - l2^2)/(2*l1*l2));
-
 costheta = (l1*wx + l2*wy*sind(theta2) + l2*wx*cosd(theta2))/(l1^2 + l2^2 + 2*l1*l2*cosd(theta2));
 sintheta = (l1*wx + l2*wy*cosd(theta2) - l2*wx*sind(theta2))/(l1^2 + l2^2 + 2*l1*l2*cosd(theta2));
 
-theta1 = atan2d(costheta,sintheta); 
+theta1 = atan2d(costheta,sintheta);
+if theta1 < 0
+    theta1 = theta1 + 180;
+end
 theta3 = phi - theta2 - theta1;
-
+if theta3 < 0
+    theta3 = theta3 + 180;
+end
 
 end
 

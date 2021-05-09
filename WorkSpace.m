@@ -5,6 +5,7 @@ t3=linspace(theta3_min, theta3_max, 100);
 [q1,q2,q3]=ndgrid(t1,t2,t3);
 xM = l1 * cosd(q1) + l2 * cosd(q1 + q2) + l3 * cosd(q1 + q2 + q3);
 yM = l1 * sind(q1) + l2 * sind(q1 + q2) + l3 * sind(q1 + q2 + q3);
+figure(2)
 plot(xM(:),yM(:),'k.')
 
 % xL = xlim; %all values of x 

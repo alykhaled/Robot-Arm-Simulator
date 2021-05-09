@@ -1,14 +1,14 @@
 clc
 clear
 
-l1 = 4;
-l2 = 3;
+l1 = 5;
+l2 = 5;
 % l3 = 30;
 
-q1_min = -90;
-q1_max = 180;
+q1_min = 0;
+q1_max = 270;
 q2_min = 0;
-q2_max = 120;
+q2_max = 135;
 % 1st path: q1 = min, q2 var
 % 2nd path: q1 = max, q2 var
 % 3rd path: q1 = var, q2 min
@@ -18,10 +18,9 @@ t1=linspace(q1_min, q1_max, 100);
 t2=linspace(q2_min, q2_max, 100);
 % 1st path: 
 for i = 1:length(t2)
-    firstPathX(i) = l1*cosd(q1_min) + l2*cosd(q1_min + t2(i));
-    firstPathY(i) = l1*sind(q1_min) + l2*sind(q1_min + t2(i));
+    [firstPathX(i), firstPathY(i)] = dkpm(l1,l2,q1_min,t2(i));
     plot(firstPathX(:),firstPathY(:),'r');
-%     pause(0.05)
+    pause(0.05)
     axis([-10 10 -10 10])
     hold on
 end
