@@ -16,6 +16,7 @@ close all
 % 10th path: q1 = min, q2 = var, q3 = max -- Done
 % 11th path: q1 = max, q2 = var, q3 = min -- Done
 % 12th path: q1 = max, q2 = var, q3 = max -- Done
+axis([-(l1+l2+l3) (l1+l2+l3) -(l1+l2+l3) (l1+l2+l3)])
 
 % Good : 1 2 3 8 11 12
 % Bad  : 4 5 6 7 9 10  
